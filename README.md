@@ -1,60 +1,49 @@
-# Trades Site Audit Kit
+# Trades Website Self-Check
 
-Trades Site Audit Kit checks a local HTML export for a small set of visible website issues. Each finding includes the page, the observed evidence and a suggested next check, so the output is useful to the person fixing it.
+Check the basics customers need to see, then take away a practical list of improvements.
 
-It does not research keywords, inspect Google accounts or predict rankings. Intentional publishing settings need an owner's decision. Maintained by [Tradesman SEO](https://tradesmanseo.co.uk/), operated by JW Digital Services Ltd.
+**For trade business owners. No coding knowledge needed.**
 
-![Complete example](docs/preview.png)
+[Open the free tool](https://tradesman-seo.github.io/trades-site-audit-kit/) · [See a fictional worked example](https://tradesman-seo.github.io/trades-site-audit-kit/examples/customer-output.html)
 
-## Live demo
+![Desktop preview](docs/preview.png)
 
-[Open the sample audit report](https://tradesman-seo.github.io/trades-site-audit-kit/). The audit itself runs locally in Node.js; the hosted page shows its synthetic report. GitHub provides the hosting and handles request logs.
+## How to use it
 
-## Start locally
+1. Open the tool in your browser. No installation or account is needed.
+2. Use your own business details in the labelled fields, or choose **Try a fictional example**.
+3. Choose **Create my action list** and review the result.
+4. Adjust your answers, then copy the result, download a text file or choose **Print / Save PDF**.
 
-Requires Node.js 22 or later. Install the locked HTML-parser dependency with `npm ci`.
+An owner-friendly action list you can work through or send to your website supplier.
+
+## What to expect
+
+Open your website on a phone. Answer based on what you can actually find and use. Not sure is a useful answer too.
+
+This is a guided self-check, not an automated site audit. It cannot measure rankings, diagnose technical faults or guarantee more enquiries.
+
+Your answers are processed in the browser tab. They are not uploaded, emailed or saved by the tool. Refreshing or closing the tab clears them. Save your result before leaving. GitHub provides hosting and handles normal request logs. Example details are fictional, not customer results.
+
+## Design and maintenance
+
+The interface uses the colours, typography and visual treatment of [Tradesman SEO](https://tradesmanseo.co.uk/). The tool is maintained by Tradesman SEO, operated by JW Digital Services Ltd. The commercial website is a separate project.
+
+## For developers
+
+The customer tool uses native HTML controls and small browser modules, with no runtime framework. Its planning or calculation rules are in `src/customer.js`; presentation helpers are in `src/customer-ui.js`.
 
 ```sh
-npm ci
+npm ci --ignore-scripts
 npm test
 npm run build
 npm run serve
 ```
 
-Open http://127.0.0.1:4173/ for the complete local demonstration. Browser examples do not upload or persist entered data. The optional development server binds to loopback only.
+Open the local address printed by the server. `npm run build:pages` prepares the static GitHub Pages artifact. Tests cover the customer rules and output escaping.
 
-## Input and output
+The original v0.1 developer helpers remain in `src/index.js` for compatibility, with their original examples. They are not needed to use the customer tool. The existing repository name and Pages URL are retained so earlier links keep working.
 
-Supply site, baseUrl and pages [{url,html}]. HTML is parsed with parse5 locally. The CLI also accepts --manifest manifest.json to read exported files within the manifest directory. No crawling or network requests.
+## Licence and feedback
 
-Use [examples/input.json](examples/input.json) as the complete input contract. Compare the generated [JSON result](examples/output.json), [Markdown report](examples/output.md) and [complete HTML](examples/output.html). The demo is in [demo/index.html](demo/index.html). It needs the local server for JavaScript modules. HTML reports can be opened as standalone files.
-
-```sh
-node cli.mjs examples/input.json --format json
-node cli.mjs examples/input.json --format html --output report.html
-node cli.mjs examples/input.json --format md --output report.md
-```
-
-For exported files, use `node cli.mjs --manifest examples/export/manifest.json`. Export files must stay inside the manifest directory. The tool never fetches a site.
-
-## Worked example
-
-Use a fictional three-page trade site with a missing title, conflicting canonicals, a malformed telephone link and one intentionally noindex draft. Include a correct control page so the report demonstrates both findings and restraint. The expected action list leaves the draft's indexing decision to its owner.
-
-All supplied example records are synthetic. No clients, outcomes, current professional advice or real service availability are represented by them. Keep real records private and review output before sharing it.
-
-## Checks
-
-- Each rule has a failing fixture and a correct control. Reports identify the exact source page and evidence.
-- Intentional noindex is reported for review, never edited or labelled automatically as a launch defect.
-- Malformed HTML, absolute and relative links, encoded paths and empty fields are handled without crashing.
-- Source content cannot inject executable markup into reports. All input files remain local and unchanged.
-- No generic SEO score, invented search volume or fabricated result appears in the output.
-
-The automated results and browser checks performed for this release are recorded in [verification.md](docs/verification.md). Manual screen-reader testing has not been performed. A passing automated check is not accessibility certification.
-
-## Contribute and maintain
-
-Use [Issues](https://github.com/Tradesman-SEO/trades-site-audit-kit/issues) for a reproducible bug and [Discussions](https://github.com/Tradesman-SEO/trades-site-audit-kit/discussions) for questions and improvements. Follow [CONTRIBUTING.md](CONTRIBUTING.md); report vulnerabilities privately using [SECURITY.md](SECURITY.md). See [CHANGELOG.md](CHANGELOG.md) for releases. Maintenance is best effort.
-
-Code, original illustrations and synthetic fixtures are MIT licensed. There is no required website backlink when reusing the resource. Commercial brand assets and third-party material are not included.
+MIT for tool code. Bundled typefaces retain their original licence notices in `demo/assets/font-licences`. [Ideas and feedback](https://github.com/Tradesman-SEO/trades-site-audit-kit/discussions/1).

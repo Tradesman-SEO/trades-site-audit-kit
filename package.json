@@ -1,7 +1,7 @@
 {
   "name": "trades-site-audit-kit",
-  "version": "0.1.0",
-  "description": "Review exported trades website HTML and produce a small evidence-linked action list.",
+  "version": "0.2.0",
+  "description": "Check the basics customers need to see, then take away a practical list of improvements.",
   "type": "module",
   "private": false,
   "license": "MIT",
