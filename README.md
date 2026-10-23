@@ -6,6 +6,10 @@ It does not research keywords, inspect Google accounts or predict rankings. Inte
 
 ![Complete example](docs/preview.png)
 
+## Live demo
+
+[Open the sample audit report](https://tradesman-seo.github.io/trades-site-audit-kit/). The audit itself runs locally in Node.js; the hosted page shows its synthetic report. GitHub provides the hosting and handles request logs.
+
 ## Start locally
 
 Requires Node.js 22 or later. Install the locked HTML-parser dependency with `npm ci`.
