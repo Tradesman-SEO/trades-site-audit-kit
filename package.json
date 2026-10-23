@@ -1,6 +1,6 @@
 {
   "name": "trades-site-audit-kit",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Check the basics customers need to see, then take away a practical list of improvements.",
   "type": "module",
   "private": false,
