@@ -1,0 +1,18 @@
+{
+  "site": "Example Trade / fictional export",
+  "baseUrl": "https://example.com",
+  "pages": [
+    {
+      "url": "/",
+      "file": "page-0.html"
+    },
+    {
+      "url": "/about",
+      "file": "page-1.html"
+    },
+    {
+      "url": "/draft",
+      "file": "page-2.html"
+    }
+  ]
+}

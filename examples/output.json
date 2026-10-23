@@ -1,0 +1,82 @@
+{
+  "title": "Example Trade / fictional export exported HTML review",
+  "summary": "Offline observations, not keyword research, live rendering or ranking predictions. Intentional publishing settings need owner review.",
+  "pages": [
+    {
+      "url": "https://example.com/",
+      "title": "Example trade services",
+      "h1s": [
+        "Example trade services"
+      ],
+      "canonical": [
+        "https://example.com/"
+      ],
+      "robots": [],
+      "links": [
+        "tel:+441610000000"
+      ]
+    },
+    {
+      "url": "https://example.com/about",
+      "title": "",
+      "h1s": [
+        "About"
+      ],
+      "canonical": [
+        "https://example.com/about",
+        "https://example.com/"
+      ],
+      "robots": [],
+      "links": [
+        "tel:wrong"
+      ]
+    },
+    {
+      "url": "https://example.com/draft",
+      "title": "Intentional draft",
+      "h1s": [
+        "Intentional draft"
+      ],
+      "canonical": [],
+      "robots": [
+        "noindex, nofollow"
+      ],
+      "links": [
+        "mailto:example@example.com"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "code": "title",
+      "message": "Missing or empty title",
+      "source": "https://example.com/about"
+    },
+    {
+      "code": "description",
+      "message": "No non-empty meta description in this export",
+      "source": "https://example.com/about"
+    },
+    {
+      "code": "canonical",
+      "message": "Multiple canonical annotations; inspect intended destination",
+      "source": "https://example.com/about"
+    },
+    {
+      "code": "canonical-target",
+      "message": "Canonical differs from page URL; may be intentional",
+      "source": "https://example.com/about"
+    },
+    {
+      "code": "telephone",
+      "message": "Malformed telephone link",
+      "source": "https://example.com/about"
+    },
+    {
+      "code": "publishing-review",
+      "message": "Explicit noindex found. Confirm owner intent; do not remove automatically.",
+      "source": "https://example.com/draft"
+    }
+  ],
+  "markdown": "- https://example.com/about | title | Missing or empty title\n- https://example.com/about | description | No non-empty meta description in this export\n- https://example.com/about | canonical | Multiple canonical annotations; inspect intended destination\n- https://example.com/about | canonical-target | Canonical differs from page URL; may be intentional\n- https://example.com/about | telephone | Malformed telephone link\n- https://example.com/draft | publishing-review | Explicit noindex found. Confirm owner intent; do not remove automatically."
+}

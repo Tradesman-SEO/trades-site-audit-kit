@@ -1,0 +1,18 @@
+{
+  "site": "Example Trade / fictional export",
+  "baseUrl": "https://example.com",
+  "pages": [
+    {
+      "url": "/",
+      "html": "<!doctype html><html><head><title>Example trade services</title><meta name=\"description\" content=\"An approved sample explanation.\"><link rel=\"canonical\" href=\"https://example.com/\"></head><body><h1>Example trade services</h1><a href=\"tel:+441610000000\">Call example</a></body></html>"
+    },
+    {
+      "url": "/about",
+      "html": "<!doctype html><html><head><link rel=\"canonical\" href=\"https://example.com/about\"><link rel=\"canonical\" href=\"https://example.com/\"></head><body><h1>About</h1><a href=\"tel:wrong\">Malformed example call link</a></body></html>"
+    },
+    {
+      "url": "/draft",
+      "html": "<!doctype html><html><head><title>Intentional draft</title><meta name=\"description\" content=\"A draft held from indexing.\"><meta name=\"robots\" content=\"noindex, nofollow\"></head><body><h1>Intentional draft</h1><a href=\"mailto:example@example.com\">Email</a></body></html>"
+    }
+  ]
+}
